@@ -1,0 +1,4322 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#160b18">
+<title>Diwali Blast | Syril Infotech</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+:root {
+  --gold: #ffd987;
+  --gold-bright: #fff1bd;
+  --orange: #ff9b38;
+  --cream: #fff9ec;
+  --dark: #160b18;
+  --maroon: #28101f;
+  --gold-glow: rgba(255, 185, 75, .35);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--dark);
+  color: white;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+/* SYRIL INFOTECH LOGO */
+
+.logo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.brand-logo {
+  width: clamp(125px, 15vw, 190px);
+  height: auto;
+  max-height: 500px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 16px rgba(255, 211, 127, .28));
+  transition: transform .4s ease, filter .4s ease;
+}
+
+.brand-logo:hover {
+  transform: scale(1.06);
+  filter: drop-shadow(0 0 25px rgba(255, 211, 127, .55));
+}
+
+@media (max-width: 600px) {
+  .logo-wrap {
+    margin-bottom: 17px;
+  }
+
+  .brand-logo {
+    width: 125px;
+    max-height: 65px;
+  }
+}
+/* =================================
+   GLOBAL DIWALI BACKGROUND
+================================= */
+
+.site-background {
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse at 50% 40%,
+      rgba(117, 48, 35, .48),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 10% 90%,
+      rgba(107, 35, 57, .25),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #100812,
+      #24101f 48%,
+      #160b18
+    );
+}
+
+/* Reusable background treatment for all sections */
+
+.site-section {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(
+      ellipse at 50% 50%,
+      rgba(117, 48, 35, .15),
+      transparent 65%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(22, 11, 24, .96),
+      rgba(40, 16, 31, .92),
+      rgba(22, 11, 24, .96)
+    );
+}
+
+/* =================================
+   HERO SECTION
+================================= */
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  isolation: isolate;
+  overflow: hidden;
+  padding: 55px 24px;
+  background: transparent;
+}
+
+/* VIDEO BACKGROUND */
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -4;
+  opacity: .78;
+}
+
+/* VIDEO OVERLAY */
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(15, 7, 16, .78),
+      rgba(20, 9, 16, .38),
+      rgba(15, 7, 16, .78)
+    ),
+    linear-gradient(
+      0deg,
+      rgba(13, 6, 15, .82),
+      rgba(13, 6, 15, .12) 50%,
+      rgba(13, 6, 15, .62)
+    );
+}
+
+/* GOLDEN LIGHT */
+
+.hero-light {
+  position: absolute;
+  z-index: -2;
+  width: min(90vw, 950px);
+  aspect-ratio: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 177, 69, .17),
+    rgba(255, 177, 69, .045) 48%,
+    transparent 72%
+  );
+  pointer-events: none;
+}
+
+/* CONTENT */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 1120px);
+  margin: auto;
+  text-align: center;
+  animation: contentReveal 1.2s ease both;
+}
+
+/* BRAND */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+
+  color: var(--gold-bright);
+  font-size: clamp(11px, 1vw, 14px);
+  font-weight: 800;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+
+  margin-bottom: 34px;
+}
+
+.brand::before,
+.brand::after {
+  content: "";
+  width: 38px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold)
+  );
+}
+
+/* EYEBROW */
+
+.eyebrow {
+  color: #ffdca0;
+  font-size: clamp(10px, 1vw, 14px);
+  font-weight: 700;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* HEADLINE */
+
+.headline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(42px, 6.2vw, 88px);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -.045em;
+  max-width: 1050px;
+  margin: 0 auto;
+
+  color: var(--cream);
+  text-shadow: 0 4px 30px rgba(0,0,0,.4);
+}
+
+.headline span {
+  display: block;
+
+  background: linear-gradient(
+    110deg,
+    #fff4ce 5%,
+    #ffd783 35%,
+    #ffb74c 60%,
+    #fff0c3 85%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  filter: drop-shadow(
+    0 4px 20px rgba(255, 173, 64, .25)
+  );
+}
+
+/* PACKAGE PILL */
+
+.package {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 32px;
+  padding: 13px 27px;
+
+  border: 1px solid rgba(255, 216, 151, .65);
+  border-radius: 100px;
+
+  color: #ffe3ad;
+  font-size: clamp(11px, 1.1vw, 15px);
+  font-weight: 800;
+  letter-spacing: .2em;
+
+  background: rgba(255, 203, 122, .10);
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 0 35px rgba(255, 174, 69, .12),
+    inset 0 0 20px rgba(255, 255, 255, .035);
+}
+
+/* PRICE OFFER */
+
+.offer {
+  position: relative;
+  width: fit-content;
+  margin: 26px auto 0;
+  padding: 0 25px 15px;
+}
+
+.price {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(65px, 9.2vw, 115px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -.065em;
+
+  background: linear-gradient(
+    180deg,
+    #fff9df 0%,
+    #ffd77f 45%,
+    #f5a83e 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  filter: drop-shadow(
+    0 5px 25px rgba(255, 177, 62, .38)
+  );
+}
+
+/* FIRST MONTH LABEL */
+
+.price-label {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 10px 23px;
+
+  color: #281407;
+
+  background: linear-gradient(
+    100deg,
+    #fff0c4,
+    #ffd16e,
+    #ffb847
+  );
+
+  border-radius: 5px;
+
+  font-size: clamp(10px, .9vw, 13px);
+  font-weight: 900;
+  letter-spacing: .2em;
+
+  box-shadow:
+    0 5px 25px rgba(255, 168, 55, .28);
+}
+
+/* =================================
+   PREMIUM CTA BUTTON
+================================= */
+
+.cta-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 43px;
+  z-index: 5;
+  gap: 30px;
+}
+/* DOWNLOAD BROCHURE BUTTON */
+
+.download-brochure {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  min-width: 275px;
+  min-height: 70px;
+  padding: 20px 35px;
+
+  border: 1.5px solid var(--gold);
+  border-radius: 100px;
+
+  color: var(--gold-bright);
+  background: rgba(255, 203, 122, .08);
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  backdrop-filter: blur(10px);
+
+  transition: all .3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.download-brochure:hover {
+  color: #251006;
+  background: linear-gradient(
+    110deg,
+    #fff2c7,
+    #ffd16f,
+    #f4a72f
+  );
+
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 0 30px rgba(255, 185, 75, .4),
+    0 12px 30px rgba(0, 0, 0, .35);
+}
+
+.download-brochure:active {
+  transform: scale(.95);
+}
+
+.download-icon {
+  font-size: 21px;
+}
+
+/* MOBILE BUTTONS */
+
+@media (max-width: 600px) {
+  .cta-wrap {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .cta,
+  .download-brochure {
+    width: min(100%, 340px);
+    min-width: 0;
+    min-height: 62px;
+    padding: 17px 25px;
+    font-size: 12px;
+  }
+}
+.cta {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  min-width: 275px;
+  min-height: 70px;
+  padding: 20px 40px;
+
+  border: 2px solid #fff0c5;
+  border-radius: 100px;
+
+  background: linear-gradient(
+    110deg,
+    #fff2c7 0%,
+    #ffd16f 35%,
+    #f4a72f 70%,
+    #ffe6a3 100%
+  );
+
+  color: #251006;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: .17em;
+
+  cursor: pointer;
+  overflow: hidden;
+
+  box-shadow:
+    0 0 0 5px rgba(255, 211, 127, .16),
+    0 0 38px rgba(255, 185, 75, .55),
+    0 14px 40px rgba(0, 0, 0, .5),
+    inset 0 2px 4px rgba(255,255,255,.85),
+    inset 0 -3px 5px rgba(132, 65, 5, .2);
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    filter .35s ease;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* LIGHT SWEEP */
+
+.cta::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -110%;
+
+  width: 55%;
+  height: 200%;
+
+  background: rgba(255,255,255,.65);
+
+  transform: rotate(25deg);
+  filter: blur(12px);
+
+  transition: left .75s ease;
+}
+
+.cta:hover::before {
+  left: 150%;
+}
+
+/* GOLD OUTLINE */
+
+.cta::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+
+  border: 1px solid rgba(255,255,255,.48);
+  border-radius: inherit;
+
+  pointer-events: none;
+}
+
+.cta:hover {
+  transform: translateY(-6px) scale(1.045);
+  filter: brightness(1.12);
+
+  box-shadow:
+    0 0 0 7px rgba(255, 211, 127, .2),
+    0 0 60px rgba(255, 185, 75, .8),
+    0 20px 48px rgba(0, 0, 0, .55),
+    inset 0 2px 4px rgba(255,255,255,.9);
+}
+
+.cta:active {
+  transform: scale(.94);
+}
+
+.cta-arrow {
+  font-size: 23px;
+  font-weight: 500;
+  transition: transform .35s ease;
+}
+
+.cta:hover .cta-arrow {
+  transform: translate(5px, -3px);
+}
+
+/* TAGLINE */
+
+/* =================================
+   CONSISTENT TAGLINE – ALL SCREENS
+================================= */
+
+.tagline {
+  width: 100%;
+  max-width: 650px;
+  margin: 38px auto 0;
+  padding: 0 12px;
+
+  color: #fff0d2;
+
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+  line-height: 1.8;
+
+  text-align: center;
+  text-transform: uppercase;
+  white-space: normal;
+  text-wrap: balance;
+}
+
+.tagline span {
+  color: var(--gold);
+}
+
+/* =================================
+   GLOBAL FLOATING SPARKLES
+================================= */
+
+.sparkle {
+  position: absolute;
+  z-index: 1;
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+  background: #ffe8a8;
+
+  box-shadow:
+    0 0 12px 3px rgba(255, 192, 88, .7);
+
+  pointer-events: none;
+
+  animation: floatSparkle linear infinite;
+}
+
+@keyframes floatSparkle {
+  0% {
+    transform: translateY(40px) scale(.4);
+    opacity: 0;
+  }
+
+  20% { opacity: .9; }
+
+  80% { opacity: .7; }
+
+  100% {
+    transform: translateY(-160px) scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* =================================
+   FIRECRACKER CANVAS
+================================= */
+
+#blastCanvas {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* REVEAL ANIMATION */
+
+@keyframes contentReveal {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 45px 22px;
+  }
+
+  .headline {
+    font-size: clamp(42px, 8vw, 72px);
+  }
+
+  .price {
+    font-size: clamp(65px, 12vw, 100px);
+  }
+}
+
+/* MOBILE HERO HEIGHT FIX */
+@media (max-width: 600px) {
+
+  .hero {
+    min-height: 100svh;
+    height: auto;
+    padding: 25px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 15px 0;
+    gap: 0;
+  }
+
+  .logo-wrap {
+    margin-bottom: 12px;
+  }
+
+  .brand-logo {
+    width: 105px;
+    max-height: 58px;
+  }
+
+  .brand {
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+  }
+
+  .hero h1 {
+    font-size: clamp(29px, 8vw, 38px);
+    line-height: 1.12;
+    margin: 8px 0 14px;
+  }
+
+  .hero .package-title {
+    font-size: 17px;
+    margin: 8px 0;
+  }
+
+  .hero .price {
+    font-size: clamp(37px, 10vw, 48px);
+    line-height: 1.1;
+    margin: 10px 0 4px;
+  }
+
+  .hero .price-label {
+    font-size: 11px;
+    margin-bottom: 18px;
+  }
+
+  .hero .cta-button {
+    min-width: 220px;
+    min-height: 56px;
+    font-size: 14px;
+    margin: 10px auto 14px;
+  }
+
+  .hero .tagline {
+    font-size: 10px;
+    line-height: 1.5;
+    margin-top: 8px;
+    padding: 0 8px;
+  }
+}
+
+/* EXTRA SMALL MOBILE SCREENS */
+@media (max-width: 380px) {
+  .hero {
+    padding: 18px 14px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .brand-logo {
+    width: 90px;
+  }
+
+  .hero .cta-button {
+    min-width: 200px;
+    min-height: 52px;
+  }
+}
+
+/* SHORT MOBILE SCREENS */
+@media (max-height: 700px) and (max-width: 600px) {
+  .hero {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .logo-wrap {
+    margin-bottom: 7px;
+  }
+
+  .brand {
+    margin-bottom: 8px;
+  }
+
+  .hero h1 {
+    margin: 5px 0 9px;
+  }
+
+  .hero .price {
+    margin: 6px 0 2px;
+  }
+
+  .hero .price-label {
+    margin-bottom: 10px;
+  }
+
+  .hero .cta-button {
+    margin: 6px auto 8px;
+  }
+}
+
+/* SHORT LAPTOP SCREENS */
+
+@media (max-height: 720px) and (min-width: 601px) {
+  .hero {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .hero-content {
+    transform: scale(.82);
+  }
+
+  .brand {
+    margin-bottom: 20px;
+  }
+
+  .package {
+    margin-top: 21px;
+  }
+
+  .offer {
+    margin-top: 17px;
+  }
+
+  .cta-wrap {
+    margin-top: 28px;
+  }
+
+  .tagline {
+    margin-top: 23px;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+/* second page */
+.strategy-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 100px 7%;
+  display: flex;
+  align-items: center;
+
+  background:
+    radial-gradient(ellipse at 15% 20%, rgba(130,35,60,.25), transparent 45%),
+    radial-gradient(ellipse at 85% 75%, rgba(180,115,45,.13), transparent 40%),
+    linear-gradient(135deg, #1b0712, #310e20 52%, #1b0813);
+}
+
+/* DECORATIVE LIGHT */
+
+.strategy-section::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  left: -220px;
+  top: 10%;
+  border-radius: 50%;
+  background: rgba(160,55,70,.12);
+  filter: blur(90px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.strategy-section::after {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  right: -200px;
+  bottom: -100px;
+  border-radius: 50%;
+  background: rgba(220,150,55,.10);
+  filter: blur(90px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* MAIN LAYOUT */
+
+.strategy-container {
+  width: 100%;
+  max-width: 1250px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  align-items: center;
+  gap: 55px;
+}
+
+/* CONTENT */
+
+.strategy-content {
+  position: relative;
+  z-index: 2;
+}
+
+.strategy-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--gold);
+  font-size: 12px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.strategy-eyebrow::before,
+.strategy-eyebrow::after {
+  content: "";
+  width: 22px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.strategy-content h2 {
+  color: var(--cream);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(38px, 5vw, 65px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -2px;
+  margin-bottom: 28px;
+}
+
+.strategy-content h2 span {
+  display: block;
+  color: var(--gold);
+  text-shadow: 0 0 25px rgba(237,196,119,.2);
+}
+
+.strategy-content p {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.85;
+  margin-bottom: 18px;
+  max-width: 610px;
+}
+
+.strategy-content .strategy-intro {
+  color: #fff;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+/* GOAL HIGHLIGHT */
+
+.strategy-goal {
+  position: relative;
+  margin-top: 35px;
+  padding: 24px 25px;
+  border-left: 3px solid var(--gold);
+
+  background: linear-gradient(
+    90deg,
+    rgba(237,196,119,.13),
+    rgba(237,196,119,.025)
+  );
+}
+
+.strategy-goal .goal-label {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.strategy-goal p {
+  color: var(--cream);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.65;
+  margin: 12px 0 0;
+}
+
+/* =====================================
+   DIWALI LAMP VISUAL
+===================================== */
+
+.strategy-visual {
+  position: relative;
+  min-height: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* GOLDEN GLOW */
+
+.lamp-glow {
+  position: absolute;
+  width: 330px;
+  height: 330px;
+  border-radius: 50%;
+  background: rgba(255,170,55,.19);
+  filter: blur(65px);
+  animation: lampGlow 4s ease-in-out infinite alternate;
+}
+
+/* ORBIT DECORATION */
+
+.lamp-orbit {
+  position: absolute;
+  border: 1px solid rgba(237,196,119,.22);
+  border-radius: 50%;
+  width: 390px;
+  height: 390px;
+}
+
+.orbit-two {
+  width: 310px;
+  height: 310px;
+  border-style: dashed;
+  animation: orbitRotate 35s linear infinite;
+}
+
+/* DIYA */
+
+.diya {
+  position: relative;
+  width: 270px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  filter: drop-shadow(0 15px 35px rgba(0,0,0,.3));
+  animation: diyaFloat 4s ease-in-out infinite;
+}
+
+/* LAMP BOWL */
+
+.diya-bowl {
+  position: absolute;
+  bottom: 42px;
+  width: 260px;
+  height: 105px;
+
+  background: linear-gradient(
+    180deg,
+    #ffe5a0 0%,
+    #d99a36 25%,
+    #98501c 70%,
+    #57270e 100%
+  );
+
+  border-radius: 20% 20% 48% 48% / 20% 20% 75% 75%;
+  border: 3px solid #f6c76b;
+
+  box-shadow:
+    inset 0 8px 12px rgba(255,255,255,.35),
+    inset 0 -15px 20px rgba(70,25,0,.4),
+    0 0 30px rgba(255,180,70,.3);
+}
+
+.diya-bowl::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 15px;
+  top: -7px;
+  left: 0;
+  border-radius: 50%;
+  background: linear-gradient(
+    90deg,
+    #a45b1c,
+    #ffe4a0,
+    #a45b1c
+  );
+}
+
+/* LAMP BASE */
+
+.diya-base {
+  position: absolute;
+  bottom: 24px;
+  width: 125px;
+  height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(
+    90deg,
+    #8c4514,
+    #ffd77e,
+    #8c4514
+  );
+}
+
+/* WICK */
+
+.diya-wick {
+  position: absolute;
+  z-index: 3;
+  bottom: 137px;
+  width: 5px;
+  height: 40px;
+  background: #4a200c;
+  transform: rotate(12deg);
+  border-radius: 5px;
+}
+
+/* FLAME */
+
+.diya-flame {
+  position: absolute;
+  z-index: 4;
+  bottom: 165px;
+  width: 53px;
+  height: 95px;
+
+  background: radial-gradient(
+    ellipse at 50% 75%,
+    #fffbd1 0%,
+    #ffdf74 28%,
+    #ff9b27 60%,
+    rgba(255,91,15,.05) 100%
+  );
+
+  border-radius: 50% 50% 45% 45%;
+
+  clip-path: polygon(
+    50% 0%,
+    75% 35%,
+    100% 70%,
+    85% 100%,
+    15% 100%,
+    0 70%,
+    25% 35%
+  );
+
+  filter: drop-shadow(0 0 18px #ffae39);
+  animation: flameFlicker .8s ease-in-out infinite alternate;
+}
+
+/* LAMP CAPTION */
+
+.lamp-caption {
+  position: absolute;
+  bottom: 5px;
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* ANIMATIONS */
+
+@keyframes diyaFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-13px);
+  }
+}
+
+@keyframes flameFlicker {
+  from {
+    transform: rotate(-4deg) scale(.96);
+  }
+  to {
+    transform: rotate(5deg) scale(1.06);
+  }
+}
+
+@keyframes lampGlow {
+  from {
+    opacity: .55;
+    transform: scale(.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes orbitRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .strategy-section {
+    padding: 85px 6%;
+  }
+
+  .strategy-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .strategy-content h2 {
+    font-size: clamp(34px, 5vw, 48px);
+  }
+
+  .strategy-visual {
+    transform: scale(.85);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .strategy-section {
+    min-height: auto;
+    padding: 75px 22px 65px;
+  }
+
+  .strategy-container {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .strategy-content h2 {
+    font-size: clamp(34px, 9vw, 43px);
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+    margin-bottom: 20px;
+  }
+
+  .strategy-eyebrow {
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+  }
+
+  .strategy-content .strategy-intro {
+    font-size: 17px;
+  }
+
+  .strategy-content p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .strategy-goal {
+    margin-top: 25px;
+    padding: 19px;
+  }
+
+  .strategy-goal p {
+    font-size: 16px;
+  }
+
+  .strategy-visual {
+    min-height: 340px;
+    transform: scale(.85);
+    margin: -5px 0;
+  }
+
+  .lamp-orbit {
+    width: 290px;
+    height: 290px;
+  }
+
+  .orbit-two {
+    width: 240px;
+    height: 240px;
+  }
+
+  .lamp-glow {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 380px) {
+  .strategy-section {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .strategy-content h2 {
+    font-size: 32px;
+  }
+
+  .strategy-visual {
+    transform: scale(.78);
+    margin: -15px 0;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .diya,
+  .diya-flame,
+  .lamp-glow,
+  .orbit-two {
+    animation: none;
+  }
+}
+/* third page */
+.process-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 115px 7%;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(164, 89, 36, .18), transparent 45%),
+    radial-gradient(circle at 5% 85%, rgba(126, 28, 57, .22), transparent 35%),
+    linear-gradient(135deg, #1b0712 0%, #280b1b 48%, #16050e 100%);
+}
+
+/* Decorative lighting */
+
+.process-section::before {
+  content: "";
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  top: -300px;
+  right: -150px;
+  background: rgba(237,196,119,.10);
+  filter: blur(100px);
+  z-index: -1;
+}
+
+.process-section::after {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  bottom: -280px;
+  left: -160px;
+  background: rgba(157,54,75,.16);
+  filter: blur(100px);
+  z-index: -1;
+}
+
+.process-container {
+  width: 100%;
+  max-width: 1250px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* HEADER */
+
+.process-header {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 75px;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 23px;
+}
+
+.section-label::before,
+.section-label::after {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+
+.section-label::after {
+  transform: rotate(180deg);
+}
+
+.process-header h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(36px, 5vw, 66px);
+  line-height: 1.12;
+  font-weight: 700;
+  letter-spacing: -2px;
+  color: var(--cream);
+  text-transform: uppercase;
+}
+
+.process-header h1 span {
+  display: block;
+  color: var(--gold);
+  margin-top: 9px;
+}
+
+.process-header .header-line {
+  width: 75px;
+  height: 3px;
+  margin: 27px auto 0;
+  border-radius: 10px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* PROCESS GRID */
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+  position: relative;
+}
+
+/* Connecting line */
+
+.process-grid::before {
+  content: "";
+  position: absolute;
+  top: 48px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(237,196,119,.55),
+    rgba(237,196,119,.55),
+    transparent
+  );
+  z-index: -1;
+}
+
+.process-card {
+  position: relative;
+  padding: 0 17px 27px;
+  text-align: center;
+  border: 1px solid rgba(237,196,119,.16);
+  border-radius: 18px;
+  background: linear-gradient(
+    160deg,
+    rgba(255,255,255,.055),
+    rgba(255,255,255,.015)
+  );
+  backdrop-filter: blur(12px);
+  transition: transform .4s ease, border-color .4s ease, background .4s ease;
+}
+
+.process-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(237,196,119,.65);
+  background: linear-gradient(
+    160deg,
+    rgba(237,196,119,.12),
+    rgba(255,255,255,.025)
+  );
+}
+
+.icon-wrap {
+  width: 78px;
+  height: 78px;
+  margin: 9px auto 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #3b1b26, #1c0a13);
+  border: 1px solid rgba(237,196,119,.55);
+  box-shadow:
+    0 0 0 7px rgba(237,196,119,.045),
+    0 0 28px rgba(237,196,119,.10);
+  color: var(--gold);
+  transition: .4s ease;
+}
+
+.process-card:hover .icon-wrap {
+  background: linear-gradient(145deg, #684221, #321421);
+  box-shadow:
+    0 0 0 8px rgba(237,196,119,.08),
+    0 0 35px rgba(237,196,119,.25);
+  transform: scale(1.07);
+}
+
+.icon-wrap svg {
+  width: 29px;
+  height: 29px;
+  stroke-width: 1.6;
+}
+
+.step-number {
+  position: absolute;
+  top: -9px;
+  right: -7px;
+  width: 27px;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #24100f;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  box-shadow: 0 3px 12px rgba(0,0,0,.3);
+}
+
+.process-card h2 {
+  min-height: 54px;
+  margin-bottom: 13px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 700;
+  color: var(--gold-light);
+  text-transform: uppercase;
+}
+
+.process-card p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+/* BOTTOM DECORATION */
+
+.process-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+  margin-top: 55px;
+  color: rgba(255,248,236,.7);
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.process-footer span {
+  color: var(--gold);
+}
+
+.footer-star {
+  color: var(--gold);
+  font-size: 17px;
+  animation: starGlow 2s ease-in-out infinite alternate;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1050px) {
+  .process-section {
+    padding: 95px 5%;
+  }
+
+  .process-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  .process-grid::before {
+    display: none;
+  }
+
+  .process-card {
+    padding: 15px 20px 28px;
+  }
+
+  .process-card h2 {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 650px) {
+  .process-section {
+    padding: 80px 6% 70px;
+  }
+
+  .process-header {
+    margin-bottom: 45px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+
+  .process-header h1 {
+    font-size: clamp(31px, 9vw, 45px);
+    letter-spacing: -1.5px;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+    max-width: 430px;
+    margin: auto;
+  }
+
+  .process-card {
+    display: grid;
+    grid-template-columns: 75px 1fr;
+    column-gap: 19px;
+    text-align: left;
+    align-items: center;
+    padding: 20px;
+    min-height: 145px;
+  }
+
+  .icon-wrap {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    width: 66px;
+    height: 66px;
+    margin: 0;
+  }
+
+  .icon-wrap svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .process-card h2 {
+    grid-column: 2;
+    margin: 0 0 7px;
+    font-size: 14px;
+    min-height: auto;
+  }
+
+  .process-card p {
+    grid-column: 2;
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .process-footer {
+    margin-top: 40px;
+    font-size: 10px;
+    line-height: 1.8;
+    letter-spacing: 1.4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes starGlow {
+  from {
+    opacity: .5;
+    transform: scale(.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+/* fourth page */
+#syril-services-section {
+  --srv-maroon: #1b0712;
+  --srv-maroon2: #2b0c1d;
+  --srv-gold: #edc477;
+  --srv-gold-light: #ffe8ad;
+  --srv-cream: #fff8ec;
+  --srv-muted: rgba(255,245,230,.72);
+
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  padding: 110px 7% 100px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 50%,
+      rgba(117,54,39,.20),
+      transparent 48%
+    ),
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(237,196,119,.12),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #1b0712 0%,
+      #2a0a1b 50%,
+      #16050e 100%
+    );
+
+  color: var(--srv-cream);
+  font-family: 'DM Sans', sans-serif;
+}
+
+#syril-services-section,
+#syril-services-section *,
+#syril-services-section *::before,
+#syril-services-section *::after {
+  box-sizing: border-box;
+}
+
+#syril-services-section .services-container {
+  width: 100%;
+  max-width: 1300px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* BACKGROUND LIGHTING */
+
+#syril-services-section::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: -300px;
+  left: -250px;
+  border-radius: 50%;
+  background: rgba(194,111,54,.13);
+  filter: blur(110px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+#syril-services-section::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  bottom: -300px;
+  right: -200px;
+  border-radius: 50%;
+  background: rgba(135,36,68,.18);
+  filter: blur(100px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* SECTION HEADING */
+
+#syril-services-section .services-heading {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 70px;
+}
+
+#syril-services-section .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 24px;
+  color: var(--srv-gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+#syril-services-section .eyebrow::before,
+#syril-services-section .eyebrow::after {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background: var(--srv-gold);
+  opacity: .7;
+}
+
+#syril-services-section .services-heading h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(36px, 5vw, 65px);
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  color: var(--srv-cream);
+}
+
+#syril-services-section .services-heading h1 span {
+  display: block;
+  margin-top: 8px;
+  color: var(--srv-gold);
+}
+
+#syril-services-section .services-intro {
+  max-width: 600px;
+  margin: 25px auto 0;
+  color: var(--srv-muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+#syril-services-section .heading-decoration {
+  width: 85px;
+  height: 2px;
+  margin: 26px auto 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--srv-gold),
+    transparent
+  );
+}
+
+/* SERVICES LAYOUT */
+
+#syril-services-section .services-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr 1fr;
+  gap: 30px;
+  align-items: center;
+}
+
+#syril-services-section .service-column {
+  display: flex;
+  flex-direction: column;
+  gap: 47px;
+}
+
+/* INDIVIDUAL SERVICES */
+
+#syril-services-section .service-item {
+  position: relative;
+  display: flex;
+  gap: 17px;
+  align-items: flex-start;
+  padding: 4px 0 17px;
+  border-bottom: 1px solid rgba(237,196,119,.20);
+  transition:
+    transform .35s ease,
+    border-color .35s ease;
+}
+
+#syril-services-section .service-item:hover {
+  border-bottom-color: var(--srv-gold);
+  transform: translateX(5px);
+}
+
+#syril-services-section .service-icon {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--srv-gold);
+  border: 1px solid rgba(237,196,119,.48);
+  border-radius: 50%;
+
+  background: linear-gradient(
+    145deg,
+    rgba(237,196,119,.14),
+    rgba(237,196,119,.025)
+  );
+
+  box-shadow: 0 0 22px rgba(237,196,119,.08);
+
+  transition:
+    color .35s ease,
+    background .35s ease,
+    box-shadow .35s ease;
+}
+
+#syril-services-section .service-item:hover .service-icon {
+  color: #2b0c1d;
+  background: var(--srv-gold);
+  box-shadow: 0 0 28px rgba(237,196,119,.25);
+}
+
+#syril-services-section .service-icon svg {
+  width: 21px;
+  height: 21px;
+  stroke-width: 1.7;
+}
+
+#syril-services-section .service-copy {
+  min-width: 0;
+}
+
+#syril-services-section .service-copy h2 {
+  margin: 0 0 9px;
+  color: var(--srv-gold-light);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+#syril-services-section .service-copy p {
+  margin: 0;
+  color: var(--srv-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* CENTRAL DIWALI VISUAL */
+
+#syril-services-section .services-visual {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  max-width: 390px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#syril-services-section .visual-glow {
+  position: absolute;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  background: rgba(237,196,119,.15);
+  filter: blur(65px);
+  animation: srvGlowPulse 4s ease-in-out infinite alternate;
+}
+
+#syril-services-section .mandala {
+  position: absolute;
+  width: 95%;
+  height: 95%;
+  border: 1px solid rgba(237,196,119,.23);
+  border-radius: 50%;
+  animation: srvRotate 45s linear infinite;
+}
+
+#syril-services-section .mandala::before,
+#syril-services-section .mandala::after {
+  content: "";
+  position: absolute;
+  inset: 12%;
+  border: 1px dashed rgba(237,196,119,.32);
+  border-radius: 50%;
+}
+
+#syril-services-section .mandala::after {
+  inset: 25%;
+  border-style: solid;
+  border-color: rgba(237,196,119,.18);
+}
+
+#syril-services-section .mandala-inner {
+  position: absolute;
+  width: 72%;
+  height: 72%;
+  border: 1px solid rgba(237,196,119,.20);
+  border-radius: 50%;
+  transform: rotate(45deg);
+}
+
+#syril-services-section .mandala-inner::before,
+#syril-services-section .mandala-inner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(237,196,119,.16);
+  border-radius: 50%;
+  transform: rotate(60deg);
+}
+
+#syril-services-section .mandala-inner::after {
+  transform: rotate(120deg);
+}
+
+#syril-services-section .visual-ring {
+  position: absolute;
+  width: 61%;
+  height: 61%;
+  border-radius: 50%;
+  border: 1px solid rgba(237,196,119,.45);
+  box-shadow: 0 0 35px rgba(237,196,119,.09);
+}
+
+#syril-services-section .visual-ring::before,
+#syril-services-section .visual-ring::after {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background: var(--srv-gold-light);
+  border-radius: 50%;
+  box-shadow: 0 0 15px var(--srv-gold);
+}
+
+#syril-services-section .visual-ring::before {
+  top: 12%;
+  left: 12%;
+}
+
+#syril-services-section .visual-ring::after {
+  right: 12%;
+  bottom: 12%;
+}
+
+#syril-services-section .visual-center {
+  position: relative;
+  z-index: 2;
+  width: 47%;
+  height: 47%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-align: center;
+
+  background: radial-gradient(
+    circle,
+    #58331f 0%,
+    #351421 65%,
+    #1b0712 100%
+  );
+
+  border: 1px solid rgba(255,220,153,.72);
+
+  box-shadow:
+    0 0 0 9px rgba(237,196,119,.045),
+    0 0 40px rgba(237,196,119,.25),
+    inset 0 0 25px rgba(237,196,119,.12);
+
+  animation: srvCenterFloat 5s ease-in-out infinite;
+}
+
+#syril-services-section .visual-center svg {
+  width: 38px;
+  height: 38px;
+  color: var(--srv-gold-light);
+  stroke-width: 1.4;
+  margin-bottom: 10px;
+}
+
+#syril-services-section .visual-center strong {
+  color: var(--srv-gold-light);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(12px, 1.5vw, 17px);
+  letter-spacing: 1px;
+}
+
+#syril-services-section .visual-center small {
+  margin-top: 5px;
+  color: rgba(255,248,236,.75);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* FESTIVE SPARKLES */
+
+#syril-services-section .spark {
+  position: absolute;
+  color: var(--srv-gold-light);
+  opacity: .8;
+  animation: srvSparkle 2.5s ease-in-out infinite alternate;
+}
+
+#syril-services-section .spark.one {
+  top: 14%;
+  left: 22%;
+  font-size: 20px;
+}
+
+#syril-services-section .spark.two {
+  top: 28%;
+  right: 7%;
+  font-size: 13px;
+  animation-delay: .8s;
+}
+
+#syril-services-section .spark.three {
+  bottom: 16%;
+  left: 15%;
+  font-size: 15px;
+  animation-delay: 1.2s;
+}
+
+#syril-services-section .spark.four {
+  right: 19%;
+  bottom: 12%;
+  font-size: 20px;
+  animation-delay: .4s;
+}
+
+/* SERVICE NOTE */
+
+#syril-services-section .service-note {
+  max-width: 900px;
+  margin: 75px auto 0;
+  padding: 22px 26px;
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+
+  border-left: 2px solid var(--srv-gold);
+
+  background: linear-gradient(
+    90deg,
+    rgba(237,196,119,.10),
+    rgba(237,196,119,.015)
+  );
+}
+
+#syril-services-section .note-icon {
+  flex: 0 0 24px;
+  color: var(--srv-gold);
+  margin-top: 2px;
+}
+
+#syril-services-section .note-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+#syril-services-section .service-note p {
+  margin: 0;
+  color: rgba(255,248,236,.78);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+#syril-services-section .service-note strong {
+  color: var(--srv-gold-light);
+}
+
+/* DESKTOP ANIMATIONS */
+
+@keyframes srvRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes srvGlowPulse {
+  from {
+    opacity: .55;
+    transform: scale(.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes srvCenterFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@keyframes srvSparkle {
+  from {
+    opacity: .3;
+    transform: scale(.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+  #syril-services-section {
+    padding: 90px 5%;
+  }
+
+  #syril-services-section .services-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+  }
+
+  #syril-services-section .services-visual {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    width: 300px;
+    margin-bottom: 15px;
+  }
+
+  #syril-services-section .service-column {
+    gap: 35px;
+  }
+
+  #syril-services-section .service-note {
+    margin-top: 55px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 620px) {
+  #syril-services-section {
+    padding: 75px 6% 70px;
+  }
+
+  #syril-services-section .services-heading {
+    margin-bottom: 40px;
+  }
+
+  #syril-services-section .eyebrow {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+
+  #syril-services-section .services-heading h1 {
+    font-size: clamp(32px, 9vw, 44px);
+    letter-spacing: -1.5px;
+  }
+
+  #syril-services-section .services-intro {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  #syril-services-section .services-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  #syril-services-section .services-visual {
+    order: 0;
+    width: min(75vw, 290px);
+    margin: 0 auto 10px;
+  }
+
+  #syril-services-section .service-column {
+    width: 100%;
+    gap: 24px;
+  }
+
+  #syril-services-section .service-column.left {
+    order: 1;
+  }
+
+  #syril-services-section .service-column.right {
+    order: 2;
+  }
+
+  #syril-services-section .service-item {
+    gap: 15px;
+    padding-bottom: 17px;
+  }
+
+  #syril-services-section .service-icon {
+    flex-basis: 44px;
+    width: 44px;
+    height: 44px;
+  }
+
+  #syril-services-section .service-copy h2 {
+    font-size: 14px;
+  }
+
+  #syril-services-section .service-copy p {
+    font-size: 12px;
+    line-height: 1.75;
+  }
+
+  #syril-services-section .service-note {
+    margin-top: 42px;
+    padding: 18px 15px;
+    gap: 12px;
+  }
+
+  #syril-services-section .service-note p {
+    font-size: 11px;
+  }
+
+  /* Disable animation ONLY inside Section 4 */
+
+  #syril-services-section *,
+  #syril-services-section *::before,
+  #syril-services-section *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  #syril-services-section .visual-glow {
+    transform: none !important;
+    opacity: .75;
+  }
+
+  #syril-services-section .mandala {
+    transform: none !important;
+  }
+
+  #syril-services-section .mandala-inner {
+    transform: rotate(45deg);
+  }
+
+  #syril-services-section .visual-center {
+    transform: none !important;
+  }
+
+  #syril-services-section .spark {
+    transform: none !important;
+    opacity: .8;
+  }
+
+  #syril-services-section .service-item:hover {
+    transform: none !important;
+  }
+
+  #syril-services-section .service-item:hover .service-icon {
+    color: var(--srv-gold);
+    background: linear-gradient(
+      145deg,
+      rgba(237,196,119,.14),
+      rgba(237,196,119,.025)
+    );
+    box-shadow: 0 0 22px rgba(237,196,119,.08);
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 380px) {
+  #syril-services-section {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  #syril-services-section .services-heading h1 {
+    font-size: 30px;
+  }
+
+  #syril-services-section .services-visual {
+    width: 250px;
+  }
+
+  #syril-services-section .service-copy h2 {
+    font-size: 13px;
+  }
+
+  #syril-services-section .service-copy p {
+    font-size: 11px;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  #syril-services-section *,
+  #syril-services-section *::before,
+  #syril-services-section *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+/* fifth page */
+    #syril-extra-benefits {
+      --eb-bg: #1b0712;
+      --eb-bg2: #2b0c1d;
+      --eb-gold: #edc477;
+      --eb-light: #ffe8ad;
+      --eb-cream: #fff8ec;
+      --eb-muted: #d8c8c8;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      padding: 100px 7%;
+      color: var(--eb-cream);
+      background:
+        radial-gradient(ellipse at 50% 35%, rgba(174,107,45,.17), transparent 48%),
+        radial-gradient(circle at 5% 90%, rgba(237,196,119,.09), transparent 30%),
+        linear-gradient(135deg, var(--eb-bg), var(--eb-bg2) 55%, #180610);
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    /* #syril-extra-benefits *,
+    #syril-extra-benefits *::before,
+    #syril-extra-benefits *::after {
+      box-sizing: border-box;
+    } */
+
+    #syril-extra-benefits .eb-inner {
+      max-width: 1180px;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    #syril-extra-benefits .eb-eyebrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: var(--eb-gold);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    #syril-extra-benefits .eb-eyebrow::before,
+    #syril-extra-benefits .eb-eyebrow::after {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: var(--eb-gold);
+      opacity: .7;
+    }
+
+    #syril-extra-benefits .eb-heading {
+      max-width: 780px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    #syril-extra-benefits .eb-heading h2 {
+      margin: 0;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 1.08;
+      font-weight: 700;
+      letter-spacing: -2px;
+      text-transform: uppercase;
+    }
+
+    #syril-extra-benefits .eb-heading h2 span {
+      color: var(--eb-gold);
+    }
+
+    #syril-extra-benefits .eb-heading p {
+      max-width: 640px;
+      margin: 22px auto 0;
+      color: var(--eb-muted);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    /* Main discount highlight */
+    #syril-extra-benefits .eb-discount {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      align-items: center;
+      gap: 35px;
+      margin: 65px auto 70px;
+      padding: 48px 55px;
+      max-width: 1000px;
+      border: none;
+      border-radius: 5px;
+      background:
+        radial-gradient(circle at 15% 50%, rgba(237,196,119,.18), transparent 38%),
+        linear-gradient(115deg, rgba(255,255,255,.045), rgba(255,255,255,.015));
+      box-shadow: none;
+    }
+
+    #syril-extra-benefits .eb-discount::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 30px;
+      width: 100px;
+      height: 3px;
+      background: var(--eb-gold);
+      box-shadow: 0 0 18px rgba(237,196,119,.7);
+    }
+
+    #syril-extra-benefits .eb-discount-visual {
+      position: relative;
+      text-align: center;
+      padding: 15px;
+    }
+
+    #syril-extra-benefits .eb-discount-visual::before {
+      content: "";
+      position: absolute;
+      width: 230px;
+      height: 230px;
+      border: 1px solid rgba(237,196,119,.23);
+      border-radius: 50%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+
+    #syril-extra-benefits .eb-discount-visual::after {
+      content: "";
+      position: absolute;
+      width: 185px;
+      height: 185px;
+      border: 1px dashed rgba(237,196,119,.35);
+      border-radius: 50%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
+
+    #syril-extra-benefits .eb-discount-number {
+      position: relative;
+      z-index: 1;
+      color: var(--eb-light);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(76px, 10vw, 125px);
+      line-height: .95;
+      font-weight: 700;
+      letter-spacing: -8px;
+      text-shadow: 0 0 35px rgba(237,196,119,.25);
+    }
+
+    #syril-extra-benefits .eb-discount-number small {
+      font-size: .52em;
+      vertical-align: top;
+      letter-spacing: -3px;
+    }
+
+    #syril-extra-benefits .eb-discount-label {
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      margin-top: 13px;
+      padding: 8px 18px;
+      color: #2a160b;
+      background: linear-gradient(100deg, #d9a957, #ffe8ad, #d9a957);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 3px;
+    }
+
+    #syril-extra-benefits .eb-discount-copy {
+      position: relative;
+      z-index: 1;
+    }
+
+    #syril-extra-benefits .eb-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      color: var(--eb-gold);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    #syril-extra-benefits .eb-tag::before {
+      content: "✦";
+      font-size: 17px;
+    }
+
+    #syril-extra-benefits .eb-discount-copy h3 {
+      margin: 0 0 14px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(25px, 3vw, 37px);
+      line-height: 1.15;
+      text-transform: uppercase;
+    }
+
+    #syril-extra-benefits .eb-discount-copy p {
+      margin: 0;
+      color: var(--eb-muted);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    #syril-extra-benefits .eb-discount-copy strong {
+      color: var(--eb-light);
+    }
+
+    /* Supporting benefits */
+    #syril-extra-benefits .eb-benefits-title {
+      text-align: center;
+      margin-bottom: 34px;
+    }
+
+    #syril-extra-benefits .eb-benefits-title span {
+      color: var(--eb-gold);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    #syril-extra-benefits .eb-benefits-title h3 {
+      margin: 10px 0 0;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(26px, 3.5vw, 40px);
+      text-transform: uppercase;
+    }
+
+    #syril-extra-benefits .eb-benefits {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 65px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    #syril-extra-benefits .eb-benefit {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 18px;
+      padding: 25px 0;
+      border-top: 1px solid rgba(237,196,119,.28);
+    }
+
+    #syril-extra-benefits .eb-benefit-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(237,196,119,.55);
+      border-radius: 50%;
+      color: var(--eb-gold);
+      font-size: 21px;
+    }
+
+    #syril-extra-benefits .eb-benefit h4 {
+      margin: 2px 0 8px;
+      color: var(--eb-light);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    #syril-extra-benefits .eb-benefit p {
+      margin: 0;
+      color: var(--eb-muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    /* Confidence statement */
+    #syril-extra-benefits .eb-confidence {
+      position: relative;
+      margin: 75px auto 55px;
+      padding: 35px 20px;
+      text-align: center;
+      border-top: 1px solid rgba(237,196,119,.35);
+      border-bottom: 1px solid rgba(237,196,119,.35);
+    }
+
+    #syril-extra-benefits .eb-confidence .eb-spark {
+      color: var(--eb-gold);
+      font-size: 22px;
+    }
+
+    #syril-extra-benefits .eb-confidence h3 {
+      margin: 15px 0 10px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(27px, 4vw, 46px);
+      line-height: 1.12;
+      text-transform: uppercase;
+    }
+
+    #syril-extra-benefits .eb-confidence h3 span {
+      color: var(--eb-gold);
+    }
+
+    #syril-extra-benefits .eb-confidence p {
+      margin: 0;
+      color: var(--eb-muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* Important information */
+    #syril-extra-benefits .eb-info {
+      max-width: 1000px;
+      margin: auto;
+      padding: 28px 32px;
+      background: rgba(0,0,0,.19);
+      border-left: 3px solid var(--eb-gold);
+    }
+
+    #syril-extra-benefits .eb-info-heading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 19px;
+    }
+
+    #syril-extra-benefits .eb-info-heading span {
+      display: grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--eb-gold);
+      border-radius: 50%;
+      color: var(--eb-gold);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    #syril-extra-benefits .eb-info-heading h4 {
+      margin: 0;
+      color: var(--eb-light);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 17px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    #syril-extra-benefits .eb-info ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 13px;
+    }
+
+    #syril-extra-benefits .eb-info li {
+      position: relative;
+      padding-left: 23px;
+      color: var(--eb-muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    #syril-extra-benefits .eb-info li::before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--eb-gold);
+    }
+
+    /* Decorative Diwali lights */
+    #syril-extra-benefits .eb-light-orb {
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--eb-light);
+      box-shadow: 0 0 14px 4px rgba(237,196,119,.4);
+      opacity: .7;
+      pointer-events: none;
+    }
+
+    #syril-extra-benefits .eb-orb-one { top: 13%; left: 8%; }
+    #syril-extra-benefits .eb-orb-two { top: 28%; right: 8%; }
+    #syril-extra-benefits .eb-orb-three { bottom: 18%; left: 12%; }
+    #syril-extra-benefits .eb-orb-four { bottom: 30%; right: 11%; }
+
+    @media (max-width: 760px) {
+      #syril-extra-benefits {
+        padding: 72px 6%;
+      }
+
+      #syril-extra-benefits .eb-heading h2 {
+        letter-spacing: -1px;
+      }
+
+      #syril-extra-benefits .eb-heading p {
+        font-size: 14px;
+      }
+
+      #syril-extra-benefits .eb-discount {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        margin: 48px auto 55px;
+        padding: 38px 22px;
+        text-align: center;
+      }
+
+      #syril-extra-benefits .eb-discount-visual {
+        padding: 15px 0;
+      }
+
+      #syril-extra-benefits .eb-discount-visual::before {
+        width: 205px;
+        height: 205px;
+      }
+
+      #syril-extra-benefits .eb-discount-visual::after {
+        width: 165px;
+        height: 165px;
+      }
+
+      #syril-extra-benefits .eb-benefits {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      #syril-extra-benefits .eb-benefit {
+        padding: 22px 0;
+      }
+
+      #syril-extra-benefits .eb-confidence {
+        margin: 55px auto 40px;
+      }
+
+      #syril-extra-benefits .eb-info {
+        padding: 23px 19px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      #syril-extra-benefits {
+        padding: 60px 5%;
+      }
+
+      #syril-extra-benefits .eb-eyebrow {
+        font-size: 10px;
+        letter-spacing: 2.5px;
+      }
+
+      #syril-extra-benefits .eb-benefit {
+        grid-template-columns: 43px 1fr;
+        gap: 13px;
+      }
+
+      #syril-extra-benefits .eb-benefit-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+      }
+
+      #syril-extra-benefits .eb-benefit h4 {
+        font-size: 15px;
+      }
+
+      #syril-extra-benefits .eb-benefit p {
+        font-size: 13px;
+      }
+
+      #syril-extra-benefits .eb-info li {
+        font-size: 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #syril-extra-benefits *,
+      #syril-extra-benefits *::before,
+      #syril-extra-benefits *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+    /* sixth page */
+    #syril-final-cta {
+      --cta-gold: #edc477;
+      --cta-light: #ffe8ad;
+      --cta-cream: #fff8ec;
+      --cta-muted: #ddc9ce;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      padding: 105px 6% 45px;
+      color: var(--cta-cream);
+      text-align: center;
+      font-family: 'DM Sans', sans-serif;
+      background:
+        radial-gradient(ellipse at 50% 40%, rgba(160, 83, 36, .24), transparent 45%),
+        radial-gradient(circle at 10% 15%, rgba(237,196,119,.12), transparent 25%),
+        radial-gradient(circle at 90% 75%, rgba(237,196,119,.10), transparent 25%),
+        linear-gradient(145deg, #18050e, #2b0c1d 52%, #16050d);
+    }
+
+    #syril-final-cta *,
+    #syril-final-cta *::before,
+    #syril-final-cta *::after {
+      box-sizing: border-box;
+    }
+
+    #syril-final-cta .cta-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1120px;
+      margin: auto;
+    }
+
+    #syril-final-cta .cta-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      margin-bottom: 24px;
+      color: var(--cta-gold);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    #syril-final-cta .cta-eyebrow::before,
+    #syril-final-cta .cta-eyebrow::after {
+      content: "";
+      width: 35px;
+      height: 1px;
+      background: var(--cta-gold);
+      opacity: .7;
+    }
+
+    #syril-final-cta .cta-main-title {
+      max-width: 900px;
+      margin: 0 auto;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(38px, 6.5vw, 76px);
+      font-weight: 700;
+      line-height: 1.02;
+      letter-spacing: -3px;
+      text-transform: uppercase;
+    }
+
+    #syril-final-cta .cta-main-title span {
+      display: block;
+      margin-top: 10px;
+      color: var(--cta-gold);
+      text-shadow: 0 0 35px rgba(237,196,119,.18);
+    }
+
+    #syril-final-cta .cta-intro {
+      max-width: 650px;
+      margin: 25px auto 0;
+      color: var(--cta-muted);
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    #syril-final-cta .cta-intro strong {
+      color: var(--cta-light);
+      font-weight: 700;
+    }
+
+    /* Offer reveal */
+    #syril-final-cta .cta-offer {
+      position: relative;
+      max-width: 820px;
+      margin: 65px auto 48px;
+      padding: 42px 25px 45px;
+      background:
+        radial-gradient(ellipse at 50% 100%, rgba(237,196,119,.15), transparent 65%),
+        linear-gradient(135deg, rgba(255,255,255,.045), rgba(255,255,255,.012));
+      border-top: 1px solid rgba(237,196,119,.45);
+      border-bottom: 1px solid rgba(237,196,119,.45);
+    }
+
+    #syril-final-cta .cta-offer::before,
+    #syril-final-cta .cta-offer::after {
+      content: "✦";
+      position: absolute;
+      top: 50%;
+      color: var(--cta-gold);
+      font-size: 27px;
+      transform: translateY(-50%);
+      text-shadow: 0 0 20px rgba(237,196,119,.7);
+    }
+
+    #syril-final-cta .cta-offer::before { left: 18px; }
+    #syril-final-cta .cta-offer::after { right: 18px; }
+
+    #syril-final-cta .cta-offer-label {
+      color: var(--cta-gold);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+    }
+
+    #syril-final-cta .cta-offer-name {
+      margin: 12px 0 5px;
+      color: var(--cta-cream);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(32px, 5vw, 55px);
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    #syril-final-cta .cta-price {
+      margin: 8px 0 0;
+      color: var(--cta-light);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(56px, 10vw, 105px);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -5px;
+      text-shadow: 0 0 35px rgba(237,196,119,.25);
+    }
+
+    #syril-final-cta .cta-price-note {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 9px 20px;
+      color: #281508;
+      background: linear-gradient(100deg, #d7a44f, #ffe8ad, #d7a44f);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    /* Urgent CTA */
+    #syril-final-cta .cta-ready {
+      margin: 50px auto 18px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(24px, 3.5vw, 38px);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    #syril-final-cta .cta-ready span {
+      color: var(--cta-gold);
+    }
+
+    #syril-final-cta .cta-button-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin: 30px auto 15px;
+    }
+
+    #syril-final-cta .cta-button {
+      position: relative;
+      isolation: isolate;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      min-width: 245px;
+      min-height: 65px;
+      padding: 18px 30px;
+      overflow: visible;
+      border: 1px solid rgba(255,248,236,.55);
+      border-radius: 4px;
+      color: #281508;
+      background: linear-gradient(110deg, #d7a44f, #ffe8ad 48%, #e5b969);
+      box-shadow: 0 10px 35px rgba(237,196,119,.2);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform .25s ease, box-shadow .25s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    #syril-final-cta .cta-button:hover {
+      transform: translateY(-4px) scale(1.025);
+      box-shadow: 0 15px 45px rgba(237,196,119,.35);
+    }
+
+    #syril-final-cta .cta-button:active {
+      transform: scale(.96);
+    }
+
+    #syril-final-cta .cta-button .cta-phone-icon {
+      font-size: 21px;
+    }
+
+    #syril-final-cta .cta-secondary {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      min-height: 58px;
+      padding: 16px 25px;
+      border: 1px solid rgba(237,196,119,.55);
+      border-radius: 4px;
+      color: var(--cta-light);
+      background: rgba(255,255,255,.035);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-decoration: none;
+      transition: background .25s ease, transform .25s ease;
+    }
+
+    #syril-final-cta .cta-secondary:hover {
+      background: rgba(237,196,119,.12);
+      transform: translateY(-3px);
+    }
+
+    #syril-final-cta .cta-direct-number {
+      margin: 18px 0 0;
+      color: var(--cta-muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    #syril-final-cta .cta-direct-number a {
+      color: var(--cta-light);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    #syril-final-cta .cta-together {
+      margin: 45px 0 0;
+      color: var(--cta-gold);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(28px, 4vw, 43px);
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-shadow: 0 0 25px rgba(237,196,119,.15);
+    }
+
+    /* Contact information */
+    #syril-final-cta .cta-contact {
+      max-width: 900px;
+      margin: 65px auto 0;
+      padding: 30px 20px 28px;
+      border-top: 1px solid rgba(237,196,119,.3);
+    }
+
+    #syril-final-cta .cta-brand {
+      margin: 0 0 23px;
+      color: var(--cta-cream);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    #syril-final-cta .cta-contact-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px 35px;
+    }
+
+    #syril-final-cta .cta-contact-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 190px;
+    }
+
+    #syril-final-cta .cta-contact-item small {
+      color: var(--cta-gold);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    #syril-final-cta .cta-contact-item a {
+      color: var(--cta-cream);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+      transition: color .2s ease;
+    }
+
+    #syril-final-cta .cta-contact-item a:hover {
+      color: var(--cta-gold);
+    }
+
+    /* Disclaimer */
+    #syril-final-cta .cta-disclaimer {
+      max-width: 850px;
+      margin: 28px auto 0;
+      color: rgba(221,201,206,.68);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    #syril-final-cta .cta-footer {
+      margin-top: 35px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(237,196,119,.13);
+      color: rgba(221,201,206,.55);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+    }
+
+    /* Festive decorative lights */
+    #syril-final-cta .cta-glow {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cta-light);
+      box-shadow: 0 0 18px 5px rgba(237,196,119,.45);
+      pointer-events: none;
+      opacity: .8;
+    }
+
+    #syril-final-cta .cta-glow-one { top: 13%; left: 9%; }
+    #syril-final-cta .cta-glow-two { top: 23%; right: 10%; }
+    #syril-final-cta .cta-glow-three { top: 57%; left: 5%; }
+    #syril-final-cta .cta-glow-four { top: 67%; right: 6%; }
+    #syril-final-cta .cta-glow-five { bottom: 15%; left: 17%; }
+    #syril-final-cta .cta-glow-six { bottom: 20%; right: 15%; }
+
+    /* Click-triggered cracker burst particles */
+    #syril-final-cta .cta-burst {
+      position: absolute;
+      left: var(--burst-x);
+      top: var(--burst-y);
+      width: 7px;
+      height: 7px;
+      border-radius: 2px;
+      background: var(--burst-color, #ffe8ad);
+      pointer-events: none;
+      z-index: 10;
+      box-shadow: 0 0 12px var(--burst-color, #ffe8ad);
+      animation: ctaBurst .75s ease-out forwards;
+    }
+
+    @keyframes ctaBurst {
+      0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+      }
+      100% {
+        opacity: 0;
+        transform:
+          translate(
+            calc(-50% + var(--burst-dx)),
+            calc(-50% + var(--burst-dy))
+          )
+          scale(.15) rotate(240deg);
+      }
+    }
+
+    @media (max-width: 700px) {
+      #syril-final-cta {
+        padding: 75px 6% 35px;
+      }
+
+      #syril-final-cta .cta-main-title {
+        letter-spacing: -1.5px;
+      }
+
+      #syril-final-cta .cta-intro {
+        font-size: 14px;
+      }
+
+      #syril-final-cta .cta-offer {
+        margin: 48px auto 38px;
+        padding: 35px 15px;
+      }
+
+      #syril-final-cta .cta-offer::before { left: 9px; }
+      #syril-final-cta .cta-offer::after { right: 9px; }
+
+      #syril-final-cta .cta-offer-label {
+        font-size: 10px;
+        letter-spacing: 3px;
+      }
+
+      #syril-final-cta .cta-price {
+        letter-spacing: -3px;
+      }
+
+      #syril-final-cta .cta-button-wrap {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      #syril-final-cta .cta-button,
+      #syril-final-cta .cta-secondary {
+        width: min(100%, 340px);
+      }
+
+      #syril-final-cta .cta-contact {
+        margin-top: 48px;
+      }
+
+      #syril-final-cta .cta-contact-list {
+        flex-direction: column;
+        gap: 22px;
+      }
+
+      #syril-final-cta .cta-contact-item {
+        min-width: 0;
+      }
+
+      #syril-final-cta .cta-glow {
+        width: 5px;
+        height: 5px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      #syril-final-cta .cta-eyebrow {
+        font-size: 9px;
+        letter-spacing: 2px;
+      }
+
+      #syril-final-cta .cta-main-title {
+        font-size: 36px;
+      }
+
+      #syril-final-cta .cta-offer-name {
+        font-size: 31px;
+      }
+
+      #syril-final-cta .cta-price {
+        font-size: 57px;
+      }
+
+      #syril-final-cta .cta-together {
+        font-size: 27px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #syril-final-cta .cta-button,
+      #syril-final-cta .cta-secondary {
+        transition: none;
+      }
+
+      #syril-final-cta .cta-burst {
+        animation-duration: .25s;
+      }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- CONSISTENT BACKGROUND FOR THE WHOLE WEBSITE -->
+<div class="site-background"></div>
+
+<!-- =================================
+     HERO SECTION
+================================= -->
+
+<section class="hero site-section">
+
+  <!-- Replace with your Diwali video -->
+  <video
+    class="hero-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+    poster="diwali-poster.jpg">
+
+    <source
+      src="YOUR-DIWALI-VIDEO.mp4"
+      type="video/mp4">
+
+  </video>
+
+  <div class="hero-overlay"></div>
+  <div class="hero-light"></div>
+
+  <canvas id="blastCanvas"></canvas>
+
+  <div class="hero-content">
+<!-- <div class="logo-wrap">
+  <img
+    src="syril-logo.webp"
+    alt="Syril Infotech Logo"
+    class="brand-logo"
+  >
+</div> -->
+    <div class="brand">
+      SYRIL INFOTECH PRESENTS
+    </div>
+
+    <div class="eyebrow">
+      A FESTIVE OFFER FOR YOUR BUSINESS
+    </div>
+
+    <h1 class="headline">
+      THIS DIWALI,
+      <span>MAKE YOUR BUSINESS</span>
+      SHINE BRIGHTER!
+    </h1>
+
+    <div class="package">
+      DIWALI BLAST PACKAGE
+    </div>
+
+    <div class="offer">
+      <div class="price">
+        ₹10,749
+      </div>
+
+      <div class="price-label">
+        FIRST MONTH ONLY
+      </div>
+    </div>
+
+<div class="cta-wrap">
+
+  <!-- START GROWING BUTTON -->
+  <button
+    class="cta"
+    id="blastButton"
+    type="button">
+
+    <span>START GROWING</span>
+    <span class="cta-arrow">↗</span>
+
+  </button>
+
+  <!-- DOWNLOAD BROCHURE BUTTON -->
+  <a
+    href="Syril-Infotech-Brochure.pdf"
+    class="download-brochure"
+    download>
+
+    <span class="download-icon">↓</span>
+    <span>DOWNLOAD BROCHURE</span>
+
+  </a>
+
+</div>
+
+    <p class="tagline">
+      YOUR BUSINESS. OUR STRATEGY.
+      <span>LET'S GROW TOGETHER!</span>
+    </p>
+
+  </div>
+
+</section>
+<!-- second page  -->
+ <section class="strategy-section" id="strategy">
+
+  <div class="strategy-container">
+
+    <!-- CONTENT -->
+
+    <div class="strategy-content">
+
+      <span class="strategy-eyebrow">
+        THE SYRIL APPROACH
+      </span>
+
+      <h2>
+        EVERY BUSINESS IS DIFFERENT.
+        <span>SO IS OUR STRATEGY!</span>
+      </h2>
+
+      <p class="strategy-intro">
+        Every business has different goals, customers, and challenges.
+      </p>
+
+      <p>
+        At Syril Infotech, we first understand your business and identify the digital marketing support you need.
+      </p>
+
+      <p>
+        We create a customized marketing plan based on your business needs. You get services that are right for your business, not a one-size-fits-all package.
+      </p>
+
+      <div class="strategy-goal">
+
+        <span class="goal-label">
+          OUR GOAL IS SIMPLE
+        </span>
+
+        <p>
+          To help your business build a stronger online presence and reach the right customers.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- DIWALI LAMP -->
+
+    <div class="strategy-visual">
+
+      <div class="lamp-glow"></div>
+
+      <div class="lamp-orbit orbit-one"></div>
+      <div class="lamp-orbit orbit-two"></div>
+
+      <div class="diya">
+
+        <div class="diya-flame"></div>
+        <div class="diya-wick"></div>
+        <div class="diya-bowl"></div>
+        <div class="diya-base"></div>
+
+      </div>
+
+      <span class="lamp-caption">
+        A BRIGHTER STRATEGY. A STRONGER FUTURE.
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- third page -->
+ <section class="process-section" id="process">
+  <div class="process-container">
+
+    <header class="process-header">
+      <div class="section-label">OUR PROCESS</div>
+
+      <h1>
+        YOUR BUSINESS.
+        <span>OUR STRATEGY. ONE CLEAR PLAN!</span>
+      </h1>
+
+      <div class="header-line"></div>
+    </header>
+
+    <div class="process-grid">
+
+      <!-- STEP 01 -->
+      <article class="process-card">
+        <div class="icon-wrap">
+          <span class="step-number">01</span>
+          <i data-lucide="search"></i>
+        </div>
+
+        <h2>UNDERSTAND YOUR BUSINESS</h2>
+
+        <p>
+          We learn about your products, services, customers, goals and challenges.
+        </p>
+      </article>
+
+      <!-- STEP 02 -->
+      <article class="process-card">
+        <div class="icon-wrap">
+          <span class="step-number">02</span>
+          <i data-lucide="monitor-check"></i>
+        </div>
+
+        <h2>REVIEW YOUR ONLINE PRESENCE</h2>
+
+        <p>
+          We check your social media pages, Google Business Profile and website, if available.
+        </p>
+      </article>
+
+      <!-- STEP 03 -->
+      <article class="process-card">
+        <div class="icon-wrap">
+          <span class="step-number">03</span>
+          <i data-lucide="lightbulb"></i>
+        </div>
+
+        <h2>IDENTIFY WHAT YOU NEED</h2>
+
+        <p>
+          We find opportunities and areas that may need improvement.
+        </p>
+      </article>
+
+      <!-- STEP 04 -->
+      <article class="process-card">
+        <div class="icon-wrap">
+          <span class="step-number">04</span>
+          <i data-lucide="clipboard-list"></i>
+        </div>
+
+        <h2>PLAN YOUR MARKETING</h2>
+
+        <p>
+          We discuss the suitable services, deliverables and timelines with you.
+        </p>
+      </article>
+
+      <!-- STEP 05 -->
+      <article class="process-card">
+        <div class="icon-wrap">
+          <span class="step-number">05</span>
+          <i data-lucide="chart-no-axes-combined"></i>
+        </div>
+
+        <h2>START, WORK & SHARE PROGRESS</h2>
+
+        <p>
+          We carry out the agreed activities and keep you updated on our work and next steps.
+        </p>
+      </article>
+
+    </div>
+
+    <div class="process-footer">
+      <span class="footer-star">✦</span>
+      A CLEAR PROCESS. A STRONGER DIGITAL PRESENCE.
+      <span class="footer-star">✦</span>
+    </div>
+
+  </div>
+</section>
+<!-- fourth page -->
+<section class="services-section" id="syril-services-section">
+
+  <div class="services-container">
+
+    <!-- SECTION HEADING -->
+
+    <header class="services-heading">
+
+      <div class="eyebrow">PAGE 04 · OUR SERVICES</div>
+
+      <h1>
+        THE RIGHT DIGITAL SERVICES
+        <span>FOR YOUR BUSINESS!</span>
+      </h1>
+
+      <p class="services-intro">
+        Based on your business needs, your customized package may include:
+      </p>
+
+      <div class="heading-decoration"></div>
+
+    </header>
+
+    <!-- SERVICES SHOWCASE -->
+
+    <div class="services-layout">
+
+      <!-- LEFT SIDE SERVICES -->
+
+      <div class="service-column left">
+
+        <article class="service-item">
+
+          <div class="service-icon">
+            <i data-lucide="megaphone"></i>
+          </div>
+
+          <div class="service-copy">
+            <h2>META ADS</h2>
+            <p>
+              Reach potential customers through Facebook and Instagram advertisements.
+            </p>
+          </div>
+
+        </article>
+
+        <article class="service-item">
+
+          <div class="service-icon">
+            <i data-lucide="mouse-pointer-click"></i>
+          </div>
+
+          <div class="service-copy">
+            <h2>GOOGLE ADS</h2>
+            <p>
+              Show your business to people searching for products or services like yours on Google.
+            </p>
+          </div>
+
+        </article>
+
+        <article class="service-item">
+
+          <div class="service-icon">
+            <i data-lucide="map-pin"></i>
+          </div>
+
+          <div class="service-copy">
+            <h2>LOCAL SEO</h2>
+            <p>
+              Improve your local online visibility and help nearby customers discover your business.
+            </p>
+          </div>
+
+        </article>
+
+      </div>
+
+      <!-- CENTRAL DIWALI VISUAL -->
+
+      <div class="services-visual">
+
+        <div class="visual-glow"></div>
+
+        <div class="mandala"></div>
+
+        <div class="mandala-inner"></div>
+
+        <div class="visual-ring"></div>
+
+        <div class="visual-center">
+          <i data-lucide="sparkles"></i>
+          <strong>GROW</strong>
+          <small>Digitally</small>
+        </div>
+
+        <span class="spark one">✦</span>
+        <span class="spark two">✧</span>
+        <span class="spark three">✦</span>
+        <span class="spark four">✧</span>
+
+      </div>
+
+      <!-- RIGHT SIDE SERVICES -->
+
+      <div class="service-column right">
+
+        <article class="service-item">
+
+          <div class="service-icon">
+            <i data-lucide="store"></i>
+          </div>
+
+          <div class="service-copy">
+            <h2>GOOGLE BUSINESS PROFILE</h2>
+            <p>
+              Improve how your business appears on Google Search and Maps.
+            </p>
+          </div>
+
+        </article>
+
+        <article class="service-item">
+
+          <div class="service-icon">
+            <i data-lucide="users"></i>
+          </div>
+
+          <div class="service-copy">
+            <h2>SOCIAL MEDIA IMPROVEMENT</h2>
+            <p>
+              Make your social media pages more attractive, active and professional.
+            </p>
+          </div>
+
+        </article>
+
+        <article class="service-item">
+
+          <div class="service-icon">
+            <i data-lucide="palette"></i>
+          </div>
+
+          <div class="service-copy">
+            <h2>CONTENT &amp; CREATIVE SUPPORT</h2>
+            <p>
+              Create engaging posts and marketing creatives to promote your business.
+            </p>
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+    <!-- SERVICE NOTE -->
+
+    <div class="service-note">
+
+      <div class="note-icon">
+        <i data-lucide="info"></i>
+      </div>
+
+      <p>
+        <strong>PLEASE NOTE:</strong>
+        Not every service is automatically included. We recommend suitable services after reviewing your business and agree on the final scope before starting.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- fifth page -->
+ 
+<section id="syril-extra-benefits">
+  <span class="eb-light-orb eb-orb-one"></span>
+  <span class="eb-light-orb eb-orb-two"></span>
+  <span class="eb-light-orb eb-orb-three"></span>
+  <span class="eb-light-orb eb-orb-four"></span>
+
+  <div class="eb-inner">
+
+    <header class="eb-heading">
+      <div class="eb-eyebrow">EXTRA BENEFITS</div>
+      <h2>MORE VALUE.<br><span>MORE REASONS TO CELEBRATE!</span></h2>
+      <p>
+        Enjoy more value with your Diwali Blast package.
+        Discover the extra benefits, flexible commitment and clear pricing
+        that help you start with confidence.
+      </p>
+    </header>
+
+    <div class="eb-discount">
+      <div class="eb-discount-visual">
+        <div class="eb-discount-number">25<small>%</small></div>
+        <div class="eb-discount-label">SPECIAL DIWALI OFFER</div>
+      </div>
+
+      <div class="eb-discount-copy">
+        <div class="eb-tag">An extra benefit for your business</div>
+        <h3>Website Development<br>at 25% OFF</h3>
+        <p>
+          Give your business a professional online presence for less.
+          Get <strong>25% off our website development service fees</strong>
+          if your business needs a website.
+        </p>
+      </div>
+    </div>
+
+    <div class="eb-benefits-title">
+      <span>THE EXTRA ADVANTAGES</span>
+      <h3>MORE BENEFITS. MORE CONFIDENCE.</h3>
+    </div>
+
+    <div class="eb-benefits">
+
+      <article class="eb-benefit">
+        <div class="eb-benefit-icon">✓</div>
+        <div>
+          <h4>No Hidden Charges</h4>
+          <p>
+            All applicable costs will be clearly explained and agreed upon
+            before work begins. You know what to expect from the start.
+          </p>
+        </div>
+      </article>
+
+      <article class="eb-benefit">
+        <div class="eb-benefit-icon">↗</div>
+        <div>
+          <h4>No Long-Term Commitment</h4>
+          <p>
+            Try our first-month package and experience our work.
+            Then decide whether you would like to continue.
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="eb-confidence">
+      <div class="eb-spark">✦ ✧ ✦</div>
+      <h3>START WITH CONFIDENCE.<br><span>GROW WITH THE RIGHT SUPPORT!</span></h3>
+      <p>
+        Clear pricing. Flexible commitment. The right digital support
+        for your business.
+      </p>
+    </div>
+
+    <div class="eb-info">
+      <div class="eb-info-heading">
+        <span>i</span>
+        <h4>Important Information</h4>
+      </div>
+
+      <ul>
+        <li>
+          Meta and Google advertising spend is separate from the package fee.
+        </li>
+        <li>
+          Website development is charged separately after the 25% discount
+          on our service fees.
+        </li>
+        <li>
+          Final services, deliverables and applicable costs are agreed upon
+          before work begins.
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+<!-- sixth page -->
+ 
+<section id="syril-final-cta">
+
+  <span class="cta-glow cta-glow-one"></span>
+  <span class="cta-glow cta-glow-two"></span>
+  <span class="cta-glow cta-glow-three"></span>
+  <span class="cta-glow cta-glow-four"></span>
+  <span class="cta-glow cta-glow-five"></span>
+  <span class="cta-glow cta-glow-six"></span>
+
+  <div class="cta-inner">
+
+    <div class="cta-eyebrow">SYRIL INFOTECH </div>
+
+    <h2 class="cta-main-title">
+      YOUR NEXT CHAPTER
+      <span>STARTS HERE!</span>
+    </h2>
+
+    <p class="cta-intro">
+      <strong>MAKE THIS DIWALI THE START OF SOMETHING BIG!</strong><br>
+      Your business deserves to shine brighter.
+      Take the first step towards building a stronger online presence
+      with Syril Infotech.
+    </p>
+
+    <div class="cta-offer">
+      <div class="cta-offer-label">YOUR FESTIVE GROWTH OFFER</div>
+      <div class="cta-offer-name">DIWALI BLAST</div>
+      <div class="cta-price">₹10,749</div>
+      <div class="cta-price-note">FIRST MONTH ONLY</div>
+    </div>
+
+    <h3 class="cta-ready">
+      READY TO <span>GROW YOUR BUSINESS?</span>
+    </h3>
+
+    <div class="cta-button-wrap">
+      <a class="cta-button" href="tel:+917010571866" data-cta-burst="true">
+        <span class="cta-phone-icon">☎</span>
+        CALL NOW
+      </a>
+
+      <a class="cta-secondary"
+         href="mailto:info@syrilinfotech.com"
+         data-cta-burst="true">
+        ✉ SEND AN EMAIL
+      </a>
+    </div>
+
+    <p class="cta-direct-number">
+      Speak directly with our team:
+      <a href="tel:+917010571866">+91 7010571866</a>
+    </p>
+
+    <div class="cta-together">LET’S GROW TOGETHER!</div>
+
+    <div class="cta-contact">
+      <h3 class="cta-brand">SYRIL INFOTECH</h3>
+
+      <div class="cta-contact-list">
+        <div class="cta-contact-item">
+          <small>Visit Our Website</small>
+          <a href="https://www.syrilinfotech.com" target="_blank" rel="noopener noreferrer">
+            www.syrilinfotech.com
+          </a>
+        </div>
+
+        <div class="cta-contact-item">
+          <small>Email Us</small>
+          <a href="mailto:info@syrilinfotech.com">
+            info@syrilinfotech.com
+          </a>
+        </div>
+
+        <div class="cta-contact-item">
+          <small>Call Our Team</small>
+          <a href="tel:+917010571866">
+            +91 7010571866
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <p class="cta-disclaimer">
+      Meta and Google advertising spend is separate. Website development
+      is charged separately after the applicable discount. Services are
+      finalized based on your business needs.
+    </p>
+
+    <div class="cta-footer">
+      © SYRIL INFOTECH · LET YOUR BUSINESS SHINE BRIGHTER
+    </div>
+
+  </div>
+
+</section>
+
+<!--
+  ADD YOUR NEXT WEBSITE SECTIONS BELOW.
+  USE class="site-section" TO KEEP THE SAME
+  DIWALI BACKGROUND COLOUR AND VISUAL THEME.
+-->
+
+<script>
+
+/* =================================
+   FLOATING GOLD SPARKLES
+================================= */
+
+const hero = document.querySelector(".hero");
+
+for (let i = 0; i < 35; i++) {
+
+  const sparkle = document.createElement("span");
+
+  sparkle.className = "sparkle";
+
+  sparkle.style.left = Math.random() * 100 + "%";
+  sparkle.style.top = (30 + Math.random() * 70) + "%";
+
+  sparkle.style.animationDuration =
+    (3 + Math.random() * 6) + "s";
+
+  sparkle.style.animationDelay =
+    (Math.random() * 5) + "s";
+
+  sparkle.style.opacity = Math.random();
+
+  hero.appendChild(sparkle);
+}
+
+
+/* =================================
+   FIRECRACKER PARTICLE SYSTEM
+================================= */
+
+const canvas = document.getElementById("blastCanvas");
+const ctx = canvas.getContext("2d");
+
+const button = document.getElementById("blastButton");
+const downloadButton = document.querySelector(".download-brochure");
+
+downloadButton.addEventListener("click", (e) => {
+  const rect = downloadButton.getBoundingClientRect();
+
+  createBurst(
+    rect.left + rect.width / 2,
+    rect.top + rect.height / 2
+  );
+});
+let particles = [];
+let animationFrame = null;
+let lastBurst = 0;
+
+function resizeCanvas() {
+
+  const dpr = Math.min(
+    window.devicePixelRatio || 1,
+    2
+  );
+
+  canvas.width = window.innerWidth * dpr;
+  canvas.height = window.innerHeight * dpr;
+
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+
+resizeCanvas();
+
+window.addEventListener("resize", resizeCanvas);
+
+
+const colors = [
+  "#fff5cf",
+  "#ffd36e",
+  "#ffad42",
+  "#ff713e",
+  "#ffffff",
+  "#f8c4ff"
+];
+
+
+/* CREATE FIREWORK EXPLOSION */
+
+function createBurst(x, y, intensity = 1) {
+
+  const burstCount = 3;
+
+  for (let b = 0; b < burstCount; b++) {
+
+    const centerX = x + (Math.random() - .5) * 110;
+    const centerY = y + (Math.random() - .5) * 90;
+
+    const count = Math.round(65 * intensity);
+
+    for (let i = 0; i < count; i++) {
+
+      const angle = (Math.PI * 2 * i) / count;
+      const speed = Math.random() * 7 + 2;
+
+      particles.push({
+
+        x: centerX,
+        y: centerY,
+
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed,
+
+        gravity: .075,
+        friction: .985,
+
+        life: 1,
+        decay: Math.random() * .014 + .009,
+
+        size: Math.random() * 3 + 1,
+
+        color: colors[
+          Math.floor(Math.random() * colors.length)
+        ]
+
+      });
+    }
+  }
+
+  if (!animationFrame) {
+    animate();
+  }
+}
+
+
+/* ANIMATE PARTICLES */
+
+function animate() {
+
+  ctx.clearRect(
+    0,
+    0,
+    window.innerWidth,
+    window.innerHeight
+  );
+
+  for (let i = particles.length - 1; i >= 0; i--) {
+
+    const p = particles[i];
+
+    p.x += p.vx;
+    p.y += p.vy;
+
+    p.vx *= p.friction;
+    p.vy *= p.friction;
+
+    p.vy += p.gravity;
+    p.life -= p.decay;
+
+    ctx.globalAlpha = Math.max(p.life, 0);
+
+    ctx.fillStyle = p.color;
+
+    ctx.shadowBlur = 15;
+    ctx.shadowColor = p.color;
+
+    ctx.beginPath();
+
+    ctx.arc(
+      p.x,
+      p.y,
+      p.size,
+      0,
+      Math.PI * 2
+    );
+
+    ctx.fill();
+
+    if (p.life <= 0) {
+      particles.splice(i, 1);
+    }
+  }
+
+  ctx.globalAlpha = 1;
+  ctx.shadowBlur = 0;
+
+  if (particles.length > 0) {
+
+    animationFrame = requestAnimationFrame(animate);
+
+  } else {
+
+    cancelAnimationFrame(animationFrame);
+    animationFrame = null;
+
+    ctx.clearRect(
+      0,
+      0,
+      window.innerWidth,
+      window.innerHeight
+    );
+  }
+}
+
+
+/* =================================
+   CTA BUTTON BLAST INTERACTION
+================================= */
+
+button.addEventListener("click", () => {
+
+  const now = Date.now();
+
+  if (now - lastBurst < 600) return;
+
+  lastBurst = now;
+
+  const rect = button.getBoundingClientRect();
+
+  const centerX = rect.left + rect.width / 2;
+  const centerY = rect.top + rect.height / 2;
+
+  // Main explosion at the button
+  createBurst(centerX, centerY, 1.2);
+
+  // Surrounding golden fireworks
+  setTimeout(() => {
+
+    createBurst(
+      window.innerWidth * .22,
+      window.innerHeight * .42,
+      .8
+    );
+
+  }, 160);
+
+  setTimeout(() => {
+
+    createBurst(
+      window.innerWidth * .78,
+      window.innerHeight * .42,
+      .8
+    );
+
+  }, 300);
+
+  // Final festive explosion
+  setTimeout(() => {
+
+    createBurst(
+      window.innerWidth * .5,
+      window.innerHeight * .22,
+      1
+    );
+
+  }, 480);
+
+  // Button press animation
+  button.animate(
+    [
+      { transform: "scale(1)" },
+      { transform: "scale(.91)" },
+      { transform: "scale(1.07)" },
+      { transform: "scale(1)" }
+    ],
+    {
+      duration: 480,
+      easing: "ease-out"
+    }
+  );
+
+});
+// third page
+  lucide.createIcons();
+
+//   fourth page
+(function () {
+  const section = document.getElementById('syril-services-section');
+
+  if (window.lucide && section) {
+    window.lucide.createIcons({
+      root: section
+    });
+  }
+})();
+// sixth page
+ (() => {
+      const section = document.getElementById('syril-final-cta');
+      if (!section || section.dataset.burstReady === 'true') return;
+      section.dataset.burstReady = 'true';
+
+      const colors = ['#ffe8ad', '#edc477', '#ffffff', '#f7a84b'];
+
+      function createBurst(button) {
+        const rect = button.getBoundingClientRect();
+        const sectionRect = section.getBoundingClientRect();
+
+        const originX = rect.left + rect.width / 2 - sectionRect.left;
+        const originY = rect.top + rect.height / 2 - sectionRect.top;
+
+        const particleCount = 30;
+
+        for (let i = 0; i < particleCount; i++) {
+          const particle = document.createElement('span');
+          particle.className = 'cta-burst';
+
+          const angle = (Math.PI * 2 * i) / particleCount;
+          const distance = 45 + Math.random() * 105;
+          const dx = Math.cos(angle) * distance;
+          const dy = Math.sin(angle) * distance;
+
+          particle.style.setProperty('--burst-x', `${originX}px`);
+          particle.style.setProperty('--burst-y', `${originY}px`);
+          particle.style.setProperty('--burst-dx', `${dx}px`);
+          particle.style.setProperty('--burst-dy', `${dy}px`);
+          particle.style.setProperty(
+            '--burst-color',
+            colors[Math.floor(Math.random() * colors.length)]
+          );
+
+          section.appendChild(particle);
+          particle.addEventListener('animationend', () => particle.remove(), {
+            once: true
+          });
+        }
+      }
+
+      section.querySelectorAll('[data-cta-burst="true"]').forEach(button => {
+        button.addEventListener('click', () => {
+          createBurst(button);
+        });
+      });
+    })();
+</script>
+
+</body>
+</html>
